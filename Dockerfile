@@ -4,6 +4,8 @@ WORKDIR /app/frontend
 COPY Frontend/package*.json ./
 RUN npm install
 COPY Frontend/ ./
+RUN chmod +x ./node_modules/.bin/vite
+
 RUN npm run build
 
 # Stage 2: Setup the server
